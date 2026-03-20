@@ -1,0 +1,20 @@
+[project]
+name = "di-prototype"
+version = "0.1.0"
+description = "HTML 解析 DI プロトタイプ — injector を用いた開発用/製品用切り替えサンプル"
+requires-python = ">=3.14"
+dependencies = [
+    "beautifulsoup4>=4.12",
+    "injector>=0.22",
+    "lxml>=5.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["di_prototype"]
+
+[project.scripts]
+di-prototype = "di_prototype.main:main"
