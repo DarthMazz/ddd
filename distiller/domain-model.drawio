@@ -1,0 +1,99 @@
+<mxfile host="65bd71144e">
+    <diagram id="distiller-domain-model" name="Distiller ドメインモデル図">
+        <mxGraphModel dx="842" dy="820" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="legend_box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;dashed=1;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="30" width="320" height="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="legend_title" value="凡例" style="text;html=1;align=left;verticalAlign=middle;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+                    <mxGeometry x="55" y="35" width="80" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="legend_entity" value="エンティティ" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" vertex="1" parent="1">
+                    <mxGeometry x="55" y="65" width="90" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="legend_vo" value="値オブジェクト" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;" vertex="1" parent="1">
+                    <mxGeometry x="155" y="65" width="90" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="legend_repo" value="リポジトリ" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;dashed=1;fontSize=10;" vertex="1" parent="1">
+                    <mxGeometry x="255" y="65" width="90" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="legend_note1" value="実線矢印 = ドメイン関連" style="text;html=1;align=left;fontSize=10;" vertex="1" parent="1">
+                    <mxGeometry x="55" y="100" width="160" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="legend_note2" value="破線矢印 = 参照・永続化" style="text;html=1;align=left;fontSize=10;" vertex="1" parent="1">
+                    <mxGeometry x="55" y="120" width="160" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="site" value="&lt;b&gt;原液&lt;/b&gt; (Site)&#xa;─────────────&#xa;url : URL&#xa;ドメイン : String" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+                    <mxGeometry x="80" y="300" width="200" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="distillation" value="&lt;b&gt;蒸留&lt;/b&gt; (Distillation)  «集約ルート»&#xa;──────────────────&#xa;実行日時 : DateTime&#xa;ステータス : 未処理 | 処理中 | 完了&#xa;初回か再実行か : Boolean" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+                    <mxGeometry x="400" y="220" width="310" height="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="mhtml" value="&lt;b&gt;MHTML&lt;/b&gt;&#xa;─────────────&#xa;取得日時 : DateTime&#xa;生データ : Binary" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+                    <mxGeometry x="820" y="200" width="200" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="content" value="&lt;b&gt;抽出コンテンツ&lt;/b&gt; (ExtractedContent)&#xa;──────────────────&#xa;タイトル : String&#xa;本文 : String&#xa;主要要素 : List" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+                    <mxGeometry x="820" y="500" width="280" height="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="html" value="&lt;b&gt;蒸留済HTML&lt;/b&gt; (DistilledHtml)&#xa;──────────────────&#xa;HTML : String&#xa;生成日時 : DateTime" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+                    <mxGeometry x="1200" y="520" width="260" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="result" value="&lt;b&gt;蒸留結果&lt;/b&gt; (DistillResult)&#xa;──────────────────&#xa;作成日時 : DateTime&#xa;メタ情報 : Map" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+                    <mxGeometry x="400" y="500" width="260" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="contenttype" value="&lt;b&gt;コンテンツ種別&lt;/b&gt; (ContentType)  «enum»&#xa;──────────────────&#xa;レシピ (Recipe)&#xa;ニュース (News)&#xa;その他 (Other)" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+                    <mxGeometry x="820" y="350" width="280" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="rule" value="&lt;b&gt;抽出ルール&lt;/b&gt; (ExtractionRule)  «値»&#xa;──────────────────&#xa;対象種別 : ContentType&#xa;抽出対象セレクタ : List" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+                    <mxGeometry x="1200" y="330" width="280" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="history" value="&lt;b&gt;蒸留履歴&lt;/b&gt; (DistillHistory)  «リポジトリ»&#xa;──────────────────&#xa;最新結果を取得(url)&#xa;結果を保存(result)" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=8;fillColor=#fff2cc;strokeColor=#d6b656;dashed=1;" parent="1" vertex="1">
+                    <mxGeometry x="80" y="500" width="280" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="r1" value="対象とする" style="endArrow=open;html=1;rounded=0;fontSize=11;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="distillation" target="site">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="r2" value="取得する" style="endArrow=open;html=1;rounded=0;fontSize=11;exitX=1;exitY=0.3;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="distillation" target="mhtml">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="r3" value="判定する" style="endArrow=open;html=1;rounded=0;fontSize=11;exitX=1;exitY=0.7;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="distillation" target="contenttype">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="r4" value="決定する" style="endArrow=open;html=1;rounded=0;fontSize=11;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="contenttype" target="rule">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="r5" value="適用して抽出する" style="endArrow=open;html=1;rounded=0;fontSize=11;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="rule" target="content">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="r6" value="生成する" style="endArrow=open;html=1;rounded=0;fontSize=11;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="content" target="html">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="r7" value="産出する" style="endArrow=open;html=1;rounded=0;fontSize=11;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="distillation" target="result">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="r8" value="保存される" style="endArrow=open;html=1;rounded=0;dashed=1;fontSize=11;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="result" target="history">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="r9" value="過去結果を参照する" style="endArrow=open;html=1;rounded=0;dashed=1;fontSize=11;exitX=0;exitY=0.85;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="distillation" target="history">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="r10" value="入力" style="endArrow=open;html=1;rounded=0;dashed=1;fontSize=11;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="mhtml" target="content">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="920" y="490"/>
+                            <mxPoint x="960" y="490"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="r11" value="含む" style="endArrow=diamond;endFill=0;html=1;rounded=0;fontSize=11;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="result" target="content">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="r12" value="含む" style="endArrow=diamond;endFill=0;html=1;rounded=0;fontSize=11;exitX=1;exitY=0.2;exitDx=0;exitDy=0;entryX=0;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="result" target="html">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
